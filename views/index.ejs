@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title><%= title %></title>
+		<meta http-equiv="Content-Type"
+			  content="text/html; charset=utf-8"/>
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="css/shift.css"
+			  media="screen"/>
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="css/form.css"
+			  media="screen"/>
+	</head>
+	<body>
+		<h1>Subtitle Shifter</h1>
+		<form name="shifter"
+			  action="<%= form %>"
+			  enctype="multipart/form-data"
+			  method="post"
+			  target="results">
+			<p>
+				<label for="input">Input file</label>
+				<input id="input"
+					   name="input"
+					   type="file">
+			</p>
+			<p>
+				<label>Timestamp in movie</label>
+				<input class="hour"
+					   id="movie-timestamp-hour"
+					   max="3"
+					   min="0"
+					   placeholder="HH"
+					   type="number"/>
+				<input class="minute"
+					   id="movie-timestamp-minute"
+					   max="59"
+					   min="0"
+					   placeholder="MM"
+					   type="number"/>
+				<input class="second"
+					   id="movie-timestamp-second"
+					   max="59"
+					   min="0"
+					   placeholder="SS"
+					   type="number"/>
+				<input class="millisecond"
+					   id="movie-timestamp-millisecond"
+					   max="999"
+					   min="0"
+					   placeholder="MS"
+					   type="number"/>
+				<br/>
+				<label>Timestamp in subtitles</label>
+				<input class="hour"
+					   id="subtitles-timestamp-hour"
+					   max="3"
+					   min="0"
+					   placeholder="HH"
+					   type="number"/>
+				<input class="minute"
+					   id="subtitles-timestamp-minute"
+					   max="59"
+					   min="0"
+					   placeholder="MM"
+					   type="number"/>
+				<input class="second"
+					   id="subtitles-timestamp-second"
+					   max="59"
+					   min="0"
+					   placeholder="SS"
+					   type="number"/>
+				<input class="millisecond"
+					   id="subtitles-timestamp-millisecond"
+					   max="999"
+					   min="0"
+					   placeholder="MS"
+					   type="number"/>
+				<button type="button"
+						id="calculate-delta">Calculate delta
+				</button>
+			</p>
+			<p>
+				<label>Delta</label>
+				<input class="hour"
+					   id="delta-hour"
+					   name="delta-hour"
+					   max="3"
+					   min="0"
+					   placeholder="HH"
+					   type="number"/>
+				<input class="minute"
+					   id="delta-minute"
+					   name="delta-minute"
+					   max="59"
+					   min="0"
+					   placeholder="MM"
+					   type="number"/>
+				<input class="second"
+					   id="delta-second"
+					   name="delta-second"
+					   max="59"
+					   min="0"
+					   placeholder="SS"
+					   type="number"/>
+				<input class="millisecond"
+					   id="delta-millisecond"
+					   max="999"
+					   min="0"
+					   placeholder="MS"
+					   type="number"/>
+				<input id="towards-start"
+					   name="towards-start"
+					   type="checkbox"
+					   value="true"/>
+				<label for="towards-start">Towards start</label>
+			</p>
+			<p>
+				<button type="submit">Submit</button>
+			</p>
+			<iframe name="results"></iframe>
+		</form>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="js/init.js"></script>
+	</body>
+</html>

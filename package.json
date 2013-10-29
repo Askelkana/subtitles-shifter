@@ -1,0 +1,25 @@
+{
+	"author":       "Stephen Jones",
+	"dependencies": {
+		"config":          "*",
+		"ejs":             "*",
+		"express":         "3.3.5",
+		"sprintf":         "*",
+		"less-middleware": "*"
+	},
+	"description":  "A simple web site to adjust the timestamps in a subtitles (.srt) file by seconds, minutes and hours. Useful when a the movie and subtitles aren't in sync.",
+	"email":        "askelkana@gmail.com",
+	"keywords":     "subtitles srt",
+	"license":      "MIT",
+	"name":         "Subtitles Shifter",
+	"private":      true,
+	"repository":   {
+		"type": "git",
+		"url":  "https://github.com/askelkana/subtitles-shifter.git"
+	},
+	"scripts":      {
+		"start": "node app.js"
+	},
+	"url":          "http://github.com/askelkana/subtitles-shifter",
+	"version":      "0.0.1"
+}

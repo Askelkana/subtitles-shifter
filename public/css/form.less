@@ -1,0 +1,142 @@
+h1
+{
+	background-color: seagreen;
+	color:            ghostwhite;
+	font-size:        3em;
+	height:           50px;
+	line-height:      50px;
+	margin:           0;
+	padding:          10px;
+}
+
+p
+{
+	margin: 15px 0 10px 164px;
+}
+
+label
+{
+	&:not([for="towards-start"])
+	{
+		display:     inline-block;
+		margin-left: -164px;
+		padding:     2px;
+		width:       157px;
+		text-align:  right;
+	}
+
+	#towards-start + &
+	{
+		background-color: darken(whitesmoke, 10%);
+		border-radius:    3px;
+		border-width:     0;
+		box-shadow:       inset 0 0 12px 1px rgba(0, 0, 0, 0.1);
+		color:            darken(whitesmoke, 50%);
+		cursor:           pointer;
+		display:          inline-block;
+		font-size:        0.9em;
+		margin-left:      2px;
+		padding:          5px 15px;
+	}
+
+	#towards-start:checked + &
+	{
+		background-color: goldenrod;
+		color:            darken(darkgoldenrod, 20%);
+	}
+}
+
+input
+{
+	background-color: lighten(seagreen, 50%);
+	border-width:     0px;
+	font-family:      monospace;
+	font-size:        0.8em;
+	padding:          5px 10px;
+
+	&[name="input"],
+	&[name="output"]
+	{
+		width: 700px;
+	}
+
+	&[name="delta"],
+	&[name="movie-timestamp"],
+	&[name="subtitles-timestamp"],
+	{
+		display:    inline-block;
+		width:      70px;
+		text-align: right;
+	}
+
+	&[type="checkbox"]
+	{
+		display: none;
+	}
+
+	&[type="number"]
+	{
+		text-align: right;
+		width:      35px;
+	}
+
+	&.hour
+	{
+		border-right-width: 0;
+	}
+
+	&.minute,
+	&.second
+	{
+		border-left-width:  0;
+		border-right-width: 0;
+		margin-left:        -4px;
+	}
+
+	&.millisecond
+	{
+		border-left-width: 0;
+		margin-left:       -4px;
+	}
+}
+
+button
+{
+	background-color: seagreen;
+	border-radius:    2px;
+	border-width:     0;
+	color:            ghostwhite;
+	cursor:           pointer;
+	display:          inline-block;
+	font-size:        0.8em;
+	font-weight:      bold;
+	margin-bottom:    2px;
+	padding:          5px 12px;
+	text-transform:   uppercase;
+
+	&:after
+	{
+		@offset: 10px;
+		bottom:     -6px;
+		box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.4);
+		content:    '';
+		display:    block;
+		left:       -@offset;
+		padding:    0 @offset;
+		position:   relative;
+		width:      100%;
+	}
+
+	&[type="submit"]
+	{
+		font-size: 1.3em;
+	}
+}
+
+iframe
+{
+	border-width: 0;
+	font-family:  tahoma, sans-serif;
+	height:       250px;
+	width:        900px;
+}
