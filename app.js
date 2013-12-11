@@ -10,12 +10,13 @@ var shift = require('./routes/shift');
 var http = require('http');
 var path = require('path');
 var app = express();
+var env = app.get('env');
 
 // all environments
-app.set('port', config.port || process.env.PORT || 3000);
+app.set('port', config[env].port || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(express.limit(config.maxFileSize || '100kb'));
+app.use(express.limit(config['*'].maxFileSize || '200kb'));
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -25,7 +26,7 @@ app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
+if ('development' == env) {
 	app.use(express.errorHandler());
 }
 

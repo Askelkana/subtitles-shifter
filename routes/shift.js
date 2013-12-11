@@ -42,8 +42,9 @@
 				throw err;
 			}
 			var lines = subtitles.toString().split('\r\n');
-			var numLines = lines.length;
-			for (var i = 0; i < numLines; lines[i] = processLine(lines[i]), i++);
+			lines.forEach(function (line, i) {
+				lines[i] = processLine(line)
+			});
 			respond(lines.join('\r\n'));
 		}
 
@@ -76,7 +77,7 @@
 			var newTimestampInMilliseconds = oldTimestampInMilliseconds + shift;
 			timestamp[millisecondsIndex] = newTimestampInMilliseconds % 1000;
 			newTimestampInMilliseconds -= timestamp[millisecondsIndex];
-			timestamp[secondsIndex] = (newTimestampInMilliseconds / 1000) % 1000;
+			timestamp[secondsIndex] = (newTimestampInMilliseconds / 1000) % 60;
 			newTimestampInMilliseconds -= timestamp[secondsIndex] * 1000;
 			timestamp[minutesIndex] = (newTimestampInMilliseconds / 60000) % 60000;
 			newTimestampInMilliseconds -= timestamp[minutesIndex] * 60000;

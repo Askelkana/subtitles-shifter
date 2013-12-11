@@ -1,13 +1,13 @@
 {
 	"*":    {
-		"maxFileSize":       "100kb",
+		"maxFileSize":       "200kb",
 		"expectedSuffix":    "srt",
 		"expectedMimeTypes": [ "text/plain", "application/octet" ]
 	},
-	"dev":  {
+	"development":  {
 		"port": 3000
 	},
-	"prod": {
+	"production": {
 		"port": 1234
 	}
 }
