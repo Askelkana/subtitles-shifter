@@ -1,13 +1,9 @@
 {
-	"*":    {
-		"maxFileSize":       "200kb",
-		"expectedSuffix":    "srt",
-		"expectedMimeTypes": [ "text/plain", "application/octet" ]
-	},
-	"development":  {
-		"port": 3000
-	},
-	"production": {
-		"port": 1234
-	}
+	"maxFileSize": "200kb",
+	"expectedSuffix": "srt",
+	"expectedMimeTypes": [
+		"text/plain",
+		"application/octet"
+	],
+	"port": 3100
 }
