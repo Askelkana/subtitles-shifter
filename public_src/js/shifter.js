@@ -1,6 +1,6 @@
 (function () {
 	$(function () {
-		$('#calculate-delta').click(calculateDelta());
+		$('#calculate-delta').click(calculateDelta);
 	});
 
 	function calculateDelta() {

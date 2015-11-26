@@ -39,9 +39,11 @@ module.exports = function (req, res) {
 	}
 
 	function shiftTimestamp(timestamp) {
+		var line;
 		adjustTimestamp(timestamp, 1);
 		adjustTimestamp(timestamp, 5);
-		return sprintf.apply(null, [ '%02s:%02s:%02s,%03s --> %02s:%02s:%02s,%03s' ].concat(timestamp));
+		line = sprintf.apply(null, [ '%02s:%02s:%02s,%03s --> %02s:%02s:%02s,%03s' ].concat(timestamp.slice(1)));
+		return line;
 	}
 
 	function adjustTimestamp(timestamp, index) {
